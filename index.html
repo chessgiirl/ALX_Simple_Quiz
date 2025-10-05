@@ -1,26 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Simple Calculator</title>
-  <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8">
+    <title>Simple Quiz</title>
 </head>
 <body>
-  <h1>Simple Calculator</h1>
-
-  <input id="num1" type="text" placeholder="Enter first number" />
-  <input id="num2" type="text" placeholder="Enter second number" />
-
-  <div class="buttons">
-    <button id="add">Add</button>
-    <button id="subtract">Subtract</button>
-    <button id="multiply">Multiply</button>
-    <button id="divide">Divide</button>
-  </div>
-
-  <p>Result: <span id="calculation-result">0</span></p>
-
-  <script src="quiz.js"></script>
+    <div id="quiz-container">
+        <p id="quiz-question">What is 2 + 2?</p>
+        <div>
+            <input type="radio" id="choice1" name="quiz" value="4">
+            <label for="choice1">4</label><br>
+            <input type="radio" id="choice2" name="quiz" value="22">
+            <label for="choice2">22</label><br>
+            <input type="radio" id="choice3" name="quiz" value="3">
+            <label for="choice3">3</label>
+        </div>
+        <button id="submit-answer">Submit Answer</button>
+        <p id="feedback"></p>
+    </div>
+    <script src="quiz.js"></script>
 </body>
 </html>

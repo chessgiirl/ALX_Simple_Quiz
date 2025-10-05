@@ -1,54 +1,24 @@
-// Functions for operations
-function add(a, b) {
-  return a + b;
-}
+// Define the checkAnswer function as required
+function checkAnswer() {
+  // Identify the correct answer
+  const correctAnswer = "4";
 
-function subtract(a, b) {
-  return a - b;
-}
+  // Retrieve the user's selected radio input for name="quiz"
+  const selected = document.querySelector('input[name="quiz"]:checked');
 
-function multiply(a, b) {
-  return a * b;
-}
+  // Get the user's answer value (if none selected, userAnswer will be null)
+  const userAnswer = selected ? selected.value : null;
 
-function divide(a, b) {
-  if (b === 0) {
-    return "Cannot divide by zero";
+  // Get the feedback element
+  const feedbackElem = document.getElementById('feedback');
+
+  // Compare and display appropriate feedback
+  if (userAnswer === correctAnswer) {
+    feedbackElem.textContent = "Correct! Well done.";
+  } else {
+    feedbackElem.textContent = "That's incorrect. Try again!";
   }
-  return a / b;
 }
 
-// Get elements
-const num1 = document.getElementById("num1");
-const num2 = document.getElementById("num2");
-const resultSpan = document.getElementById("calculation-result");
-
-// Helper function to update result
-function updateResult(value) {
-  resultSpan.textContent = value;
-}
-
-// Add event listeners
-document.getElementById("add").addEventListener("click", () => {
-  const a = parseFloat(num1.value);
-  const b = parseFloat(num2.value);
-  updateResult(add(a, b));
-});
-
-document.getElementById("subtract").addEventListener("click", () => {
-  const a = parseFloat(num1.value);
-  const b = parseFloat(num2.value);
-  updateResult(subtract(a, b));
-});
-
-document.getElementById("multiply").addEventListener("click", () => {
-  const a = parseFloat(num1.value);
-  const b = parseFloat(num2.value);
-  updateResult(multiply(a, b));
-});
-
-document.getElementById("divide").addEventListener("click", () => {
-  const a = parseFloat(num1.value);
-  const b = parseFloat(num2.value);
-  updateResult(divide(a, b));
-});
+// Add event listener to the Submit Answer button (pass the function reference)
+document.getElementById('submit-answer').addEventListener('click', checkAnswer);
