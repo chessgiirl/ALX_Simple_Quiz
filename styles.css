@@ -46,3 +46,23 @@ label {
     margin-top: 20px;
     font-size: 18px;
 }
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin-top: 50px;
+}
+
+input {
+  margin: 5px;
+  padding: 10px;
+}
+
+button {
+  margin: 5px;
+  padding: 10px 20px;
+}
+
+#calculation-result {
+  font-weight: bold;
+  color: green;
+}
